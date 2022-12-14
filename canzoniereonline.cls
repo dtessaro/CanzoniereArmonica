@@ -37,22 +37,22 @@
 %% CHAPTER & SECTIONS
 %-----------------------------------------
 
-\newcommand{\mySection}[3]{
+\newcommand*{\mySection}[3]{
 	\cleardoublepage{}
 	\null	
 	\vfill
 	\section*{\centering \fontsize{40}{20} \it{#1}}
 	\begin{center}
-	  \includegraphics[scale=#3]{#2}
+	  \includegraphics[width=#3]{#2}
 	\end{center}
 	  \vfill
 	\newpage
 }
 
-\newcommand{\mySubsection}[1]{
+\newcommand*{\mySubsection}[1]{
 
    	\subsection*{\centering \huge\it{#1}}
-
+	\null
 }
 
 \newcommand{\songList}[2]{
