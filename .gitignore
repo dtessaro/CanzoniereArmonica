@@ -1,1 +1,8 @@
 songs
+*.aux
+*.fdb_latexmk
+*.fls
+*.ilg
+*.log
+*.out
+*.gz
