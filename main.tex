@@ -1,0 +1,72 @@
+%% CHORDED Settings
+
+
+
+
+\documentclass[twocolumns,
+			   titleindex,
+			   chorded,
+			   libertine]{canzoniereonline}%
+
+%opzioni formato: singoli, standard (A4), a5vert, b5vert, a5oriz, a6vert;
+%opzioni accordi: lyric, chorded {quelli d Songs}
+%opzioni font: palatino, libertine
+%opzioni segno minore: "minorsign=quel che vuoi"
+%opzioni indici: authorsindex, titleindex, tematicindex
+%opzioni copertina: cover e nocover
+%opzioni colonne: twocolumns, onecolumn;
+\def\canzsongcolumsnumber{2}
+\usepackage[paperheight=210mm, paperwidth=148mm, inner=15mm, outer=8mm, top=10mm, bottom=10mm]{geometry}
+\usepackage[italian]{babel}
+\usepackage[hidelinks]{hyperref}
+\usepackage{wasysym} %per \eightnote e \quarternote
+
+%Spazio laciato nella parte interna ed esterna del libro
+
+% FRONTESPIZIO
+%-------------------------------------------------------------------------------
+\input{Copertina.tex}
+
+% NUOVI COMANDI E VARIABILI GLOBALI
+%--------------------------------------------------------------------------------
+%Command to chapter subsectioning
+\renewcommand{\songchapter}{\chapter*}
+
+%New command to make colophon appear on even (closing) page
+\newcommand*\cleartoleftpage{%
+  \clearpage
+  \ifodd\value{page}\hbox{}\newpage\fi
+}
+
+%Counter globale per tenere traccia di una numerazione progressiva
+%Si affianca a un altro counter gia utilizzato nella classe CanzoniereOnLine "songnum" 
+%che, tuttavia, si riazzera ognivolta viene definito un nuovo ambiente \beginsongs{}
+\newcounter{GlobalSongCounter} 
+
+
+
+\begin{document}
+
+\firstpage
+\null\newpage
+
+
+% CAPITOLI DEL CANZONIERE
+%-------------------------------------------------------------------------------
+% Ciascun capitolo contiene già tutta la logica di gestione della 
+% numerazione progressiva, del DB locale da cui attingere le canzoni
+% e la creazione/chiusura dell'ambiente in cui vengono importate 
+% tutte le canzoni relative
+\addtocounter{GlobalSongCounter}{1} %set starting song counter to 1 (0 otherwise)
+
+
+\input{chapters/_chapters.tex}
+
+
+%\cleartoleftpage
+
+%\colophon
+
+
+
+\end{document}
