@@ -54,6 +54,19 @@
    	\subsection*{\centering \huge\it{#1}}
 
 }
+
+\newcommand{\songList}[2]{
+	\begin{songs}{}
+		\songcolumns{\canzsongcolumsnumber}
+		\setcounter{songnum}{\theGlobalSongCounter} %set songnum counter, otherwise would be reset
+		%set the default path inside current folder
+		\makeatletter
+		\def\input@path{{#1}}
+		\makeatother
+		{#2} %Song list
+		\setcounter{GlobalSongCounter}{\thesongnum}
+	\end{songs}
+}
 % Conditionals
 %-----------------------------------------------------
 
@@ -127,10 +140,7 @@
 % CERCHIETTO PER ASPIRATI
 %---------------------------------
 
-\newcommand{\asp}[1]{ \hspace{-8pt} \vspace{-.5pt} \textcircled{\raisebox{-.9pt}{#1}}}
-
-
-
+\newcommand{\asp}[1]{ \hspace{-8pt} \vspace{-.5pt} \textcircled{\raisebox{-.9pt}{#1}} }
 
 
 % FONT
