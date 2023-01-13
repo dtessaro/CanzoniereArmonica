@@ -79,8 +79,7 @@
 \newif\ifaseivert
 \newif\ifsmart
 \newif\iftitleindex
-\newif\ifauthorsindex
-\newif\iftematicindex
+
 \newif\ifcover
 
 \newif\iftwocolumns%<P>
@@ -235,18 +234,18 @@
 
 
 
-%modifico il comando per i titoli secondari, in modo da generare l'indice
-\renewcommand\indextitleentry[1]{%
-\ifxetex
-	\iftitleindex\index[alfabetico]{#1|indexanchor{\thesongnum}}
-	\else
-	\fi
-\else
-  	\iftitleindex\index{#1|indexanchor{\thesongnum}}
-	\else
-	\fi
-\fi
-}
+%%modifico il comando per i titoli secondari, in modo da generare l'indice
+%\renewcommand\indextitleentry[1]{%
+%\ifxetex
+%	\iftitleindex\index[alfabetico]{#1|indexanchor{\thesongnum}}
+%	\else
+%	\fi
+%\else
+%  	\iftitleindex\index{#1|indexanchor{\thesongnum}}
+%	\else
+%	\fi
+%\fi
+%}
 
 %note di basso
 \def\bassfont{\futurelet\next\@bassverify}
@@ -265,17 +264,7 @@
 {\chordlocals\global\let/\bassfont
 \global\let-=\canzonline@myminor}
 
-\renewcommand\indextitleentry[1]{%
-\ifxetex
-	\iftitleindex\index[alfabetico]{#1|indexanchor{\thesongnum}}
-	\else
-	\fi
-\else
-  	\iftitleindex\index{#1|indexanchor{\thesongnum}}
-	\else
-	\fi
-\fi
-}
+
 
 %SONGPOS
 %\ifaseivert
@@ -311,22 +300,22 @@
 
 %INDICI grazie a Enrico Gregorio
 %------------------------------------------------
-%\makeindex[name=alfabetico,title=Indice alfabetico,program=truexindy,options=-M texindy -C utf8 -L italian -M xindystyle]
-%
-%\def\accents@list{\do\IeC\do\`\do\'}
-%\def\letters@list{\do\i{i}}
-%\newcommand{\noaccentindex}[1]{%
-%  \begingroup
-%  \protected@edef\next{#1}%
-%  \ifnum\pdfstrcmp{\detokenize\expandafter{\next}}{\detokenize{#1}}=\z@
-%    \endgroup\index{#1|indexanchor{\thesongnum}}%
-%  \else
-%    \def\do##1{\def##1####1{####1}}\accents@list
-%    \def\do##1##2{\def##1{##2}}\letters@list
-%    \edef\next{\endgroup\def\noexpand\next{\next}}\next
-%    \expandafter\index\expandafter{\next @\detokenize{#1}|indexanchor{\thesongnum}}%
-%  \fi}
-%
+\makeindex[name=alfabetico,title=Indice alfabetico,program=truexindy,options=-M texindy -C utf8 -L italian -M xindystyle]
+
+\def\accents@list{\do\IeC\do\`\do\'}
+\def\letters@list{\do\i{i}}
+\newcommand{\noaccentindex}[1]{%
+  \begingroup
+  \protected@edef\next{#1}%
+  \ifnum\pdfstrcmp{\detokenize\expandafter{\next}}{\detokenize{#1}}=\z@
+    \endgroup\index{#1|indexanchor{\thesongnum}}%
+  \else
+    \def\do##1{\def##1####1{####1}}\accents@list
+    \def\do##1##2{\def##1{##2}}\letters@list
+    \edef\next{\endgroup\def\noexpand\next{\next}}\next
+    \expandafter\index\expandafter{\next @\detokenize{#1}|indexanchor{\thesongnum}}%
+  \fi}
+
 
 % COPERTINA
 %--------------------------------------- 
