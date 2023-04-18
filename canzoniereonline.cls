@@ -67,6 +67,8 @@
 		\setcounter{GlobalSongCounter}{\thesongnum}
 	\end{songs}
 }
+
+
 % Conditionals
 %-----------------------------------------------------
 
@@ -132,6 +134,8 @@
 \RequirePackage{etoolbox,xstring}
 \RequirePackage{ccicons}
 \RequirePackage{imakeidx} 
+
+
 \usepackage{titlesec}% cambio la formattazione dei titolo dei capitoli 
 										 % (mi serve per l'indice tematico)
 
@@ -139,7 +143,7 @@
 % CERCHIETTO PER ASPIRATI
 %---------------------------------
 
-\newcommand{\asp}[1]{ \hspace{-8pt} \vspace{-.5pt} \textcircled{\raisebox{-.9pt}{#1}} }
+\newcommand{\asp}[1]{ \hspace{-8pt} \raisebox{0.5pt}{\textcircled{\raisebox{-.9pt}{#1}}} \hspace{-8pt} }
 
 
 % FONT
@@ -180,7 +184,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \RequirePackage[nomeasures,noindexes,noshading]{songs}
-\MultiwordChords	
+\MultiwordChords
+
+\notenamesin {1} {2} {3} {4} {5} {6} {7}
+\notenamesout{LA}{SI}{DO}{RE}{MI}{FA}{SOL}
 \renewcommand{\sharpsymbol}{\ensuremath{\raisebox{0.5mm}{\footnotesize$\sharp$}}}  % diesis
 \renewcommand{\flatsymbol}{\raisebox{0.1ex}{$\flat$}}				% bemolle
 \setlength{\cbarwidth}{0pt}						% linea laterale ritornelli
