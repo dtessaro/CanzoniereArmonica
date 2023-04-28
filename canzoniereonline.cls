@@ -367,31 +367,16 @@
 	\begin{minipage}{0.41\textwidth}
 	\fi
 	\small
-	Questo canzoniere è stato composto  il giorno \textbf{\today{} }
-	utilizzando \LaTeX \qquad e basandosi sul pacchetto \textsf{songs}\footnote{\url{http://songs.sourceforge.net}} di Kevin W. Hamlen e 
-	sulla classe \textsf{canzoniereonline}\footnote{\url{www.canzoniereonline.it}}.  
-	Il codice sorgente è distribuito con licenza Creative Commons.
+	Questo canzoniere è stato aggiornato il giorno \\
+	\textbf{\today{}} \\
+	Il codice sorgente è libero e disponibile su \url{ github.com/dtessaro/CanzoniereArmonica}.
 	\smallskip
-	
-	Il font utilizzato è il \iflibertine\textsf{Libertine}\footnote{\url{www.linuxlibertine.org}}\else Palatino\fi.
-	
-	\smallskip
-	I testi delle canzoni sono proprietà dei rispettivi autori.
-	La Legge n.~159 del 22 maggio 1993 ne consente l'uso solo per attività didattica, di studio e di ricerca. \\
-	
-	\smallskip
-	Ideato e realizzato da \textsf{Paolo Gazzotti}, con l'inestimabile contributo di tante persone della comunità 
-	pastorale S.~Antonio~Abate di Varese, tra cui, in particolar modo, \textsf{Nicolò Venditti}, \textsf{Elena Anselmi} e \textsf{don Stefano Silipigni}.\\
-	
-	\smallskip
-	
-	Si prega di comunicare ogni errore individuato a \textsf{paolo.gazzotti@gmail.com} per  migliorare e 
-	perfezionare il canzoniere nelle edizioni successive.
-	
+		
 	\smallskip
 	\smallskip
-	
-	{\hspace*{3.3em}\Large\ccbyncsaeu}
+	\begin{center}
+		\includegraphics[width=2cm]{QR_code.png}
+	\end{center}
 	\end{minipage}
 	\clearpage
 }
